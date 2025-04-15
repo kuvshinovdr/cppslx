@@ -14,5 +14,24 @@ ISO C++20/23-compliant compiler. Modules are not used.
 
 Header-only library. Just copy it where you want it to reside.
 
+## Contents
+
+### helper\_macros.hpp
+
+#### Static operator() support
+
+You may define a call operator supposed to be static to be static if a compiler supports it or be just const if it does not:
+
+```cpp
+struct SayHello
+{
+    // This operator() does not depend on SayHello state.
+    CPPSLX_STATIC_CALL void operator()() CPPSLX_STATIC_CALL_CONST noexcept
+	{
+	    std::cout << "Hello!\n";
+	}
+};
+```
+
 
 
