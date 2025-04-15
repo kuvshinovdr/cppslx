@@ -27,10 +27,18 @@ struct SayHello
 {
     // This operator() does not depend on SayHello state.
     CPPSLX_STATIC_CALL void operator()() CPPSLX_STATIC_CALL_CONST noexcept
-	{
-	    std::cout << "Hello!\n";
-	}
+    {
+        std::cout << "Hello!\n";
+    }
 };
+```
+
+### unpack\_into.hpp
+
+A struct that captures a functional object and applies it to a tuple unpacking tuple into a list of arguments:
+
+```cpp
+std::cout << cppslx::unpack_into{std::plus<>{}}( std::tuple{1, 2} ); // > 3
 ```
 
 
