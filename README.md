@@ -16,6 +16,9 @@ Header-only library. Just copy it where you want it to reside.
 
 ## Contents
 
+All non-macro definitions reside in `cppslx` namespace.
+All macros are named like `CPPSLX_SOMETHING`.
+
 ### helper\_macros.hpp
 
 #### Static operator() support
